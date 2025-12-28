@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Recommendation Agent 🎵</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 Music Recommendation Agent</h1>
+            <p class="subtitle">Get personalized music recommendations based on your mood, activity, and context</p>
+        </header>
+
+        <main>
+            <form id="recommendationForm" class="recommendation-form">
+                <div class="form-group">
+                    <label for="location">📍 Location (City & Country)</label>
+                    <input 
+                        type="text" 
+                        id="location" 
+                        name="location" 
+                        placeholder="e.g., New York, USA"
+                        value=""
+                    >
+                    <button type="button" id="detectLocation" class="btn-secondary">Detect My Location</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="mood">😊 Current Mood *</label>
+                    <input 
+                        type="text" 
+                        id="mood" 
+                        name="mood" 
+                        placeholder="e.g., happy, energetic, calm, focused"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="activity">🏃 Current Activity *</label>
+                    <input 
+                        type="text" 
+                        id="activity" 
+                        name="activity" 
+                        placeholder="e.g., working, exercising, relaxing, studying"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="tags">🏷️ Tags (Optional)</label>
+                    <input 
+                        type="text" 
+                        id="tags" 
+                        name="tags" 
+                        placeholder="e.g., workout, cardio, focus (comma or space separated)"
+                    >
+                    <small>Separate multiple tags with commas or spaces</small>
+                </div>
+
+                <button type="submit" id="submitBtn" class="btn-primary">
+                    <span id="submitText">Get Recommendations</span>
+                    <span id="submitLoader" class="loader" style="display: none;"></span>
+                </button>
+            </form>
+
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+            <div id="recommendations" class="recommendations" style="display: none;">
+                <h2>🎶 Your Recommendations</h2>
+                <div id="recommendationsList"></div>
+            </div>
+
+            <div id="recentMemories" class="recent-memories" style="display: none;">
+                <h3>📝 Recent Activity</h3>
+                <div id="memoriesList"></div>
+            </div>
+
+            <div id="logsSection" class="logs-section">
+                <div class="logs-header">
+                    <h3>📋 System Logs</h3>
+                    <div class="logs-controls">
+                        <button id="toggleLogs" class="btn-secondary">Show Logs</button>
+                        <button id="clearLogs" class="btn-secondary">Clear</button>
+                        <button id="autoScroll" class="btn-secondary active">Auto-scroll</button>
+                    </div>
+                </div>
+                <div id="logsContainer" class="logs-container" style="display: none;">
+                    <div id="logsList" class="logs-list"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by Gemini AI & Multi-Agentic Architecture</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+

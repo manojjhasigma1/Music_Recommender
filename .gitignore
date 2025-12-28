@@ -1,0 +1,32 @@
+# Environment variables
+.env
+.env.*
+/.env
+
+# Passwords folder
+passwords/
+
+#Ignores all files ending with .log
+*.log
+
+#Ignores the entire build directory.
+build/
+
+#Ignores temp.txt in the root directory
+/temp.txt
+
+# Negates a previous ignore rule, meaning important.txt will not be ignored even if it matches a broader pattern.
+!important.txt
+
+#Ignores node_modules directories at any level of the repository.
+**/node_modules/
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
